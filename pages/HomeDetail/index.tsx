@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native';
 import * as React from 'react';
 
-export function Home() {
+export function HomeDetail() {
   return (
     <View style={styles.container} >
-      <Text>homeTab/home</Text>
+      <Text>homeTab/homeDetail</Text>
     </View>
   );
 }

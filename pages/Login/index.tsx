@@ -18,6 +18,11 @@ export function Login(props: Props) {
       >
         <Text style={styles.toText} >to Splash</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => props.navigation.push('TabNavigator')}
+      >
+        <Text style={styles.toText} >to TabNavigator</Text>
+      </TouchableOpacity>
     </View>
   );
 }
