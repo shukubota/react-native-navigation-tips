@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Home } from './pages/home';
+import { Home } from './pages/Home';
+import { TopNavigator } from './navigator';
 
 export default function App() {
-  return <Home />
+  return <TopNavigator />
 }
 
 const styles = StyleSheet.create({

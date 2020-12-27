@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
-import React from 'react';
+import * as React from 'react';
 
-export const Home = () => {
+export function Home() {
   return (
     <View style={styles.container} >
       <Text>homepage</Text>
