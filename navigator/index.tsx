@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
+import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Setting } from '../pages/Setting';
 import { Login } from '../pages/Login';
@@ -13,10 +14,16 @@ const Stack = createStackNavigator();
 export function TopNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName="Splash" >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Splash" component={Splash} />
-        <Stack.Screen name="TabNavigator" component={TabNavigator} />
+        <Stack.Screen
+          name="TabNavigator"
+          component={TabNavigator}
+          options={{
+            header: () => null,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
@@ -24,9 +31,9 @@ export function TopNavigator() {
 
 export function HomeTabNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="HomeDetail" component={HomeDetail} />
+    <Stack.Navigator initialRouteName="HomeTab/Home" headerMode="none" >
+      <Stack.Screen name="HomeTab/Home" component={Home} />
+      <Stack.Screen name="HomeTab/HomeDetail" component={HomeDetail} />
     </Stack.Navigator>
   )
 }
@@ -36,7 +43,10 @@ const Tab = createBottomTabNavigator();
 export function TabNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="HomeTabNavigator" component={HomeTabNavigator} />
+      <Tab.Screen
+        name="HomeTabNavigator"
+        component={HomeTabNavigator}
+      />
       <Tab.Screen name="Setting" component={Setting} />
     </Tab.Navigator>
   )
